@@ -1,0 +1,1 @@
+create datavase testDB default charset usf8mb4 collate utfmb4_geveral_ci;
