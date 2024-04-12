@@ -21,7 +21,7 @@ select count(*) as 주문건수 from 주문 where 고객번호 in (select 고객
 select 담당자명, 고객회사명, 마일리지 from 고객 where 마일리지 > any(select 마일리지 from 고객 where 도시 = '부산광역시');
 -- 각 지역의 어느 평균 마일리지보다도 마일리지가 큰 고객의 정보
 select 담당자명, 고객회사명, 마일리지 from 고객 where 마일리지 > all(select avg(마일리지) from 고객 group by 지역);
-
+,
 -- 한 번이라도 주문한 적이 있는 고객의 정보
 select 고객번호, 고객회사명 from 고객 where exists (select * from 주문 where 고객.고객번호 = 주문.고객번호);
 
